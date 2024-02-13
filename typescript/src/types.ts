@@ -1,3 +1,37 @@
+export type Point = { x: number; y: number }
+
+export type Maze = number[][]
+
+export interface BaseState {
+  player: {
+    position: Point
+    rotation: number
+  }
+  moves: number
+  timer: number
+  start: Point
+  startRotation: number
+  target: Point
+  maze: number[][]
+  rows: number
+  columns: number
+}
+
+export interface Level {
+  entityId: string
+  baseState: string
+  name: string
+  gameType: string
+  ordinal: number
+}
+
+export interface PointWithDirection extends Point {
+  direction: string
+  turns: number
+  steps: number
+  parent: PointWithDirection | null
+}
+
 export type Location = {
   x: number
   y: number
