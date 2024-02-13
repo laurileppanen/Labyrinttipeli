@@ -4,11 +4,6 @@ export type Walls = Partial<{
   [key in Rotation]: boolean
 }>
 
-/**
- * Square is a 4 bit number, each bit represents a wall
- * @param square
- * @returns Walls around the square
- */
 export const getWalls = (square: number): Walls => {
   const masks = [0b1000, 0b0100, 0b0010, 0b0001] as const
 
